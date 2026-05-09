@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+}
+
+/* 入力エリア */
+.input-area {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #4f46e5;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* リスト */
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* カード */
+.todo-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.todo-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-text {
+  font-size: 15px;
+  color: #333;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-edit {
+  display: flex;
+  gap: 8px;
+}
+
+/* ボタン共通 */
+.btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: #4f46e5;
+  color: white;
+}
+.btn-save {
+  background-color: #10b981;
+  color: white;
+}
+.btn-cancel {
+  background-color: #9ca3af;
+  color: white;
+}
+.btn-edit {
+  background-color: #f59e0b;
+  color: white;
+}
+.btn-delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
