@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
+const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
+
 function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
@@ -9,7 +11,7 @@ function App() {
   const [editingText, setEditingText] = useState("");
   // 1. 【Read】最初にデータを取ってくる
   useEffect(() => {
-    fetch("http://localhost:3000/api/todos")
+    fetch(`${API_BASE}/api/todos`)
       .then((res) => res.json())
       .then((data) => setTodos(data));
   }, []);
@@ -21,7 +23,7 @@ function App() {
       return; // ← ここで処理を止める
     }
     setError(""); // エラーをリセット
-    const res = await fetch("http://localhost:3000/api/todos", {
+    const res = await fetch(`${API_BASE}/api/todos`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: input }),
@@ -33,12 +35,12 @@ function App() {
 
   // 3. 【Delete】削除ボタン
   const deleteTodo = async (id) => {
-    await fetch(`http://localhost:3000/api/todos/${id}`, { method: "DELETE" });
+    await fetch(`${API_BASE}/api/todos/${id}`, { method: "DELETE" });
     setTodos(todos.filter((todo) => todo.id !== id));
   };
   // 編集
   const updateTodo = async (id) => {
-    await fetch(`http://localhost:3000/api/todos/${id}`, {
+    await fetch(`${API_BASE}/api/todos/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: editingText }),
